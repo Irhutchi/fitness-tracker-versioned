@@ -1,0 +1,68 @@
+{
+  "assessmentListCollection": [
+    {
+      "title": "Member A",
+      "assessments": [
+        {
+          "title": "No.1",
+          "weight": 72.3,
+          "chest": 36.0,
+          "thigh": 21.0,
+          "upperArm": 15.0,
+          "waist": 31.0,
+          "hips": 33.0  
+        },
+        {
+          "title": "No.2",
+          "weight": 72.3,
+          "chest": 36.0,
+          "thigh": 21.0,
+          "upperArm": 15.0,
+          "waist": 31.0,
+          "hips": 33.0 
+        },
+        {
+          "title": "No.3",
+          "weight": 72.3,
+          "chest": 36.0,
+          "thigh": 21.0,
+          "upperArm": 15.0,
+          "waist": 31.0,
+          "hips": 33.0 
+        }
+      ]
+    },
+    {
+      "title": "Member",
+      "assessments": [
+        {
+          "title": "No.1",
+          "weight": 72.3,
+          "chest": 36.0,
+          "thigh": 21.0,
+          "upperArm": 15.0,
+          "waist": 31.0,
+          "hips": 33.0 
+        },
+        {
+          "title": "No.2",
+          "weight": 72.3,
+          "chest": 36.0,
+          "thigh": 21.0,
+          "upperArm": 15.0,
+          "waist": 31.0,
+          "hips": 33.0 
+        },
+        {
+          "title": "No.3",
+          "weight": 72.3,
+          "chest": 36.0,
+          "thigh": 21.0,
+          "upperArm": 15.0,
+          "waist": 31.0,
+          "hips": 33.0 
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<table class="ui fixed table">
+  <thead>
+    <tr>
+      <th>Assessment</th>
+      <th>Weight</th>
+      <th>Chest</th>
+      <th>Thigh</th>
+      <th>Upper Arm</th>
+      <th>Waist</th>
+      <th>Hips</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each member.assessments}}
+      <tr>
+        <td>
+          {{title}}
+        </td>
+        <td>
+          {{weight}}
+        </td>
+        <td>
+          {{chest}}
+        </td>   
+        <td>
+          {{thigh}}
+        </td>
+        <td>
+          {{upperArm}}
+        </td>
+        <td>
+          {{waist}}
+        </td>
+        <td>
+          {{hips}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
