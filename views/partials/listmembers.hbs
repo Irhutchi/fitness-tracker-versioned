@@ -1,0 +1,14 @@
+{{#each members}}
+  <section class="ui stacked segment">
+    <h2 class="ui header">
+      {{title}}
+    </h2>
+    <p> Number of Assessments: {{memberStore.memberAssessmentSize}} </p>
+    <a href="/member/{{id}}" class="ui icon button">
+      <i class="icon folder open"></i>
+    </a>
+    <a href="/dashboard/deletemember/{{id}}" class="ui icon button">
+      <i class="icon trash"></i>
+    </a>
+  </section>
+{{/each}}

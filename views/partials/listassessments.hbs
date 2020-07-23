@@ -8,6 +8,7 @@
       <th>Upper Arm</th>
       <th>Waist</th>
       <th>Hips</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -33,6 +34,9 @@
         </td>
         <td>
           {{hips}}
+        </td>
+        <td>
+          <a href="/member/{{../member.id}}/deleteassessment/{{id}}" class="ui tiny yellow button">Delete</a>
         </td>
       </tr>
     {{/each}}
