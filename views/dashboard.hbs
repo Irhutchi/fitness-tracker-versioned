@@ -1,49 +1,6 @@
 {{> menu id="dashboard"}}
 
-{{#each members}}
 <section class="ui segment">
-    <h2 class="ui header">
-      {{title}}
-    </h2>
-    <table class="ui fixed table">
-      <thead>
-        <tr>
-          <th>Assessment</th>
-          <th>Weight</th>
-          <th>Chest</th>
-          <th>Thigh</th>
-          <th>Upper Arm</th>
-          <th>Waist</th>
-          <th>Hips</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each assessments}}
-          <tr>
-            <td>
-              {{title}}
-            </td>
-            <td>
-              {{weight}}
-            </td>
-            <td>
-              {{chest}}
-            </td>   
-            <td>
-              {{thigh}}
-            </td>
-            <td>
-              {{upperArm}}
-            </td>
-            <td>
-              {{waist}}
-            </td>
-            <td>
-              {{hips}}
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </section>
-{{/each}}
+  {{> listmembers}}
+</section>
+
