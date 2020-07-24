@@ -5,70 +5,22 @@
       "title": "Member A",
       "assessments": [
         {
-          "id": "03",
-          "title": "No.1",
-          "weight": 72.3,
-          "chest": 36.0,
-          "thigh": 21.0,
-          "upperArm": 15.0,
-          "waist": 31.0,
-          "hips": 33.0
+          "id": "cff767d0-cdaf-11ea-a915-bbcab45e841e",
+          "weight": "72.00",
+          "chest": "36.5",
+          "thigh": "23.3",
+          "upperArm": "27.0",
+          "waist": "32.0",
+          "hips": "28.0"
         },
         {
-          "id": "04",
-          "title": "No.2",
-          "weight": 72.3,
-          "chest": 36.0,
-          "thigh": 21.0,
-          "upperArm": 15.0,
-          "waist": 31.0,
-          "hips": 33.0
-        },
-        {
-          "id": "05",
-          "title": "No.3",
-          "weight": 72.3,
-          "chest": 36.0,
-          "thigh": 21.0,
-          "upperArm": 15.0,
-          "waist": 31.0,
-          "hips": 33.0
-        }
-      ]
-    },
-    {
-      "id": "02",
-      "title": "Member B",
-      "assessments": [
-        {
-          "id": "06",
-          "title": "No.1",
-          "weight": 72.3,
-          "chest": 36.0,
-          "thigh": 21.0,
-          "upperArm": 15.0,
-          "waist": 31.0,
-          "hips": 33.0
-        },
-        {
-          "id": "07",
-          "title": "No.2",
-          "weight": 72.3,
-          "chest": 36.0,
-          "thigh": 21.0,
-          "upperArm": 15.0,
-          "waist": 31.0,
-          "hips": 33.0
-        },
-        {
-          "id": "08",
-          "title": "No.3",
-          "weight": 72.3,
-          "chest": 36.0,
-          "thigh": 21.0,
-          "upperArm": 15.0,
-          "waist": 31.0,
-          "hips": 33.0
+          "id": "ae4de3a0-cdbb-11ea-9edf-6798dfb3af73",
+          "weight": "71.5",
+          "chest": "37.2",
+          "thigh": "20.5",
+          "upperArm": "14.9",
+          "waist": "30",
+          "hips": "33"
         }
       ]
     }
