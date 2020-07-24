@@ -1,31 +1,44 @@
 "use strict";
 const _ = require('lodash');
+const JsonStore = require('./json-store');
 
 const memberStore = {
-  memberCollection: require("./member-assessment-list-store.json")
-    .memberCollection,
+
+  store: new JsonStore('./models/member-assessment-list-store.json', {
+    memberCollection: [] }),
+  collection: 'memberCollection',
 
   getAllMembers() {
-    return this.memberCollection;
+    return this.store.findAll(this.collection);
   },
 
   getMember(id) {
-    return _.find(this.memberCollection, { id: id });
+    return this.store.findOneBy(this.collection, { id: id });
   },
   
-  removeAssessment(id, assessmentId) {
+   removeAssessment(id, assessment) {
     const member = this.getMember(id);
-    _.remove(member.assessments, { id: assessmentId });
+    const assessments = member.assessments;
+    _.remove(assessments, { id: assessmentId });
+   this.store.save();
+  },
+
+  addAssessment(id, assessment) {
+    const member = this.getMember(id);
+    member.assessments.push(assessment);
+    this.store.save();
   },
 
   removeMember(id) {
-    _.remove(this.memberCollection, { id: id });
+    const member = this.getMember(id);
+    this.store.remove(this.collection, { id: id });
+    this.store.save();
   },
 
-  memberAssessmentSize(id, assessmentId) {
+  /*memberAssessmentSize(id, assessmentId) {
     const member = this.getMember(id);
-    _.size(member.assessments, { id: assessmentId });
-  },
+    _.size(assessments, { id: assessmentId });
+  },*/
 };
 
 module.exports = memberStore;
