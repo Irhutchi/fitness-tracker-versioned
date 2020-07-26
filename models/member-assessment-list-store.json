@@ -1,28 +1,3 @@
 {
-  "memberCollection": [
-    {
-      "id": "01",
-      "title": "Member A",
-      "assessments": [
-        {
-          "id": "cff767d0-cdaf-11ea-a915-bbcab45e841e",
-          "weight": "72.00",
-          "chest": "36.5",
-          "thigh": "23.3",
-          "upperArm": "27.0",
-          "waist": "32.0",
-          "hips": "28.0"
-        },
-        {
-          "id": "ae4de3a0-cdbb-11ea-9edf-6798dfb3af73",
-          "weight": "71.5",
-          "chest": "37.2",
-          "thigh": "20.5",
-          "upperArm": "14.9",
-          "waist": "30",
-          "hips": "33"
-        }
-      ]
-    }
-  ]
+  "memberCollection": []
 }

@@ -1,0 +1,24 @@
+{{> welcomemenu id='login' }}
+
+<form class="ui stacked segment form" action="/authenticate" method="POST">
+   <h1 class="ui orange header">
+      Welcome back !
+      <div class="sub header">Lets get into it....</div>
+  </h1>
+  </div>
+   <div class="field required">
+     <label>Email</label> 
+      <div class="ui left icon input">
+          <i class="mail icon"></i>
+          <input placeholder="Email" name="email">
+      </div>
+  </div>
+  <div class="field required">
+    <label>Password</label>
+      <div class="ui left icon input">
+          <i class="lock icon"></i>
+          <input type="password"  name="password">
+      </div>
+  </div>
+  <button class="ui blue submit button">Login</button>
+</form>
