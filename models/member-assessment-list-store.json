@@ -1,3 +1,14 @@
 {
-  "memberCollection": []
+  "memberCollection": [
+    {
+      "id": "58244b40-cf23-11ea-9c69-7b840292a0ba",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "weight": "72.00",
+      "chest": "40.00",
+      "thigh": "24.1",
+      "upperArm": "27.0",
+      "waist": "28",
+      "hips": "25"
+    }
+  ]
 }

@@ -16,6 +16,7 @@ const memberStore = {
   getMember(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },
+  
   getUserDetails(userid) {
     return this.store.findBy(this.collection, { userid: userid });
   },
@@ -26,12 +27,17 @@ const memberStore = {
     _.remove(assessments, { id: assessmentId });
     this.store.save();
   },
+  
+  addAssessment(assessment) {
+    this.store.add(this.collection, assessment);
+    this.store.save();
+  },
 
-  addAssessment(id, newAssessment) {
+  /*addAssessment(id, newAssessment) {
     const member = this.getMember(id);
     member.assessments.unshift(newAssessment);
     this.store.save();
-  },
+  },*/
 
   /*addAssessment(loggedInUser, newAssessment) {
     const loggedInUser = accounts.getCurrentUser(request)
