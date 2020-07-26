@@ -1,6 +1,10 @@
 {{> menu id="dashboard"}}
 
-<section class="ui segment">
-  {{> listmembers}}
+<section class="ui center aligned middle aligned segment">
+  <h2 class="ui header">
+    {{member.title}}
+  </h2>
+    {{> analytics}}
+    {{> assessment-table}}
+    {{> addassessment}}
 </section>
-
