@@ -3,31 +3,31 @@
 const _ = require('lodash');
 const JsonStore = require('./json-store');
 
-const userStore = {
+const trainerStore = {
 
-  store: new JsonStore('./models/user-store.json', { users: [] }),
-  collection: 'users',
+  store: new JsonStore('./models/trainer-store.json', { trainers: [] }),
+  collection: 'trainers',
 
-  getAllUsers() {
+  getAllTrainers() {
     return this.store.findAll(this.collection);
   },
 
-  addUser(user) {
-    this.store.add(this.collection, user);
+  addTrainer(trainer) {
+    this.store.add(this.collection, trainer);
     this.store.save();
   },
 
-  getUserById(id) {
+  getTrainerById(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },
 
-  getUserByEmail(email) {
+  getTrainerByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
   },
   
-  getUserByName(name) {
+  getTrainerByName(name) {
     return this.store.FindOneBy(this.collection, { name: name });
   },
 };
 
-module.exports = userStore;
+module.exports = trainerStore;

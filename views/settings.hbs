@@ -1,25 +1,22 @@
-{{> welcomemenu id="signup"}}
+{{> menu id="settings"}}
 
 <div class="ui two column grid basic middle aligned segment">
   <div class="column">
-    <form class="ui stacked segment form" action="/register" method="POST">
-      <h1 class="ui orange header">Register</h1>
+    <img class="ui image" src="https://cdn.glitch.com/8fe88056-95cf-41a7-b264-3253cbb98167%2Fabout.jpg?v=1595066738947">
+  </div>
+  <div class="column">
+    <form class="ui stacked segment form" action="/settings" method="POST">
+      <h1 class="ui orange header">Edit Profile</h1>
       <div class="two fields">
         <div class="field">
           <label>Name</label>
-          <input placeholder="Name" type="text"  name="name">
+          <input placeholder="Name" type="text"  name="name" value = {{name}}>
         </div>
         <div class="field">
           <label>Gender</label>
-          <div class="ui selection dropdown">
-            <input type="hidden" name="gender">
-            <i class="dropdown icon"></i>
-            <div class="default text">Gender</div>
-            <div class="menu">
-              <div class="item" data-value="2">Unspecified</div>
-              <div class="item" data-value="1">Male</div>
-              <div class="item" data-value="0">Female</div>
-            </div>
+           <div class="ui left icon input">
+            <i class="transgender alternate icon"></i>
+            <input placeholder="Gender" type="text" name="gender" value ={{gender}}>
           </div>
         </div>
       </div>
@@ -27,31 +24,31 @@
          <label>Email</label>
           <div class="ui left icon input">
               <i class="mail icon"></i>
-              <input placeholder="Email" name="email">
+              <input placeholder="Email" name="email" value ={{email}}>
           </div>
       </div>
       <div class="field required">
         <label>Password</label>
           <div class="ui left icon input">
               <i class="lock icon"></i>
-              <input type="password"  name="password">
+              <input type="password"  name="password" value ={{password}}>
           </div>
       </div>
       <div class="field">
         <label>Address</label>
         <div class="ui left icon input">
           <i class="address card icon"></i>
-          <input type="text" name="address">
+          <input type="text" name="address" value ={{address}}>
         </div>
       </div>
       <div class="two fields">
         <div class="field">
           <label>Height</label>
-          <input type="number" placeholder="Height (cm)" step="0.1"  min="0" max="250"name="height">
+          <input type="number" placeholder="Height (cm)" step="0.1"  min="0" max="250"name="height" value ={{height}}>
         </div>
         <div class="field">
           <label>Starting Weight</label>
-          <input type="number" placeholder="weight (kg)" step="0.1"  min="0" max="250"name="startingweight">
+          <input type="number" placeholder="weight (kg)" step="0.1"  min="0" max="250"name="startingweight" value ={{startingweight}}>
         </div>
       </div>
       <div class="ui success message">
@@ -60,8 +57,5 @@
       </div>
       <button class="ui blue submit button">Submit</button>
     </form>
-  </div>
-  <div class="column">
-    <img class="ui image" src="https://cdn.glitch.com/8fe88056-95cf-41a7-b264-3253cbb98167%2Fabout.jpg?v=1595066738947">
   </div>
 </div>
