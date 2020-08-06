@@ -33,18 +33,6 @@ const memberStore = {
     this.store.save();
   },
 
-  /*addAssessment(id, newAssessment) {
-    const member = this.getMember(id);
-    member.assessments.unshift(newAssessment);
-    this.store.save();
-  },*/
-
-  /*addAssessment(loggedInUser, newAssessment) {
-    const loggedInUser = accounts.getCurrentUser(request)
-    loggedInUser.assessments.unshift(newAssessment);
-    this.store.save();
-  },*/
-
   removeMember(id) {
     const member = this.getMember(id);
     this.store.remove(this.collection, { id: id });
