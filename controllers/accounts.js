@@ -1,7 +1,7 @@
 "use strict";
 
-const userstore = require("../models/user-store");
-const trainerstore = require("../models/trainer");
+const memberStore = require("../models/member-store");
+const trainerStore = require("../models/trainer-store");
 const logger = require("../utils/logger");
 const uuid = require("uuid");
 
@@ -27,10 +27,10 @@ const accounts = {
     response.render("settings", viewData);
   },
   
-  updateSettings (request, response) {
+  /*updateSettings (request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     const editProfile = {
-      id: uuid.v1(),
+      //id: uuid.v1(),
       userid: loggedInUser.id, 
       name: request.body.name,
       gender: request.body.gender,
@@ -42,8 +42,22 @@ const accounts = {
     //logger.debug("Creating a new assessment = ", newAssessment);
     //memberStore.addAssessment(editProfile);
     response.redirect("/settings", editProfile);
-  },
+  },*/
 
+   updateSettings(request, response) {
+    const userId = request.params.id;
+    const loggedInMember = memberStore.getMemberById(userId);
+    const editProfile = {
+      fullname: request.body.fullname,
+      gender:  request.body.gender,
+      email: request.body.email,
+      password: request.body.password,
+      address: request.body.address,
+    };
+    logger.debug(`Updating User Details ${userId}`);
+    memberStore.updateMember(userId);
+    response.redirect("/settings/" + userId);
+  },
 
   logout(request, response) {
     response.cookie("member", "");
@@ -58,22 +72,24 @@ const accounts = {
   },
 
   register(request, response) {
-    const user = request.body;
-    user.id = uuid.v1();
-    userstore.addUser(user);
-    logger.info(`registering ${user.email}`);
+    const member = request.body;
+    member.id = uuid.v1();
+    memberStore.addMember(member);
+    logger.info(`registering ${member.email}`);
+    assessments:[];
     response.redirect("/");
   },
 
-  authenticate(request, response) {
-    const user = userstore.getUserByEmail(request.body.email);
-    const trainer = trainerstore.getTrainerByEmail(request.body.email);
+   authenticate(request, response) {
+    const member = memberStore.getUserByEmail(request.body.email);
+    const trainer = trainerStore.getTrainerByEmail(request.body.email);
     const password = request.body.password;
-    if (user && user.password === password) {
-      response.cookie("member", user.email);
-      logger.info(`logging in ${user.email}`);
+    if (member && member.password === password) {
+      response.cookie("member", member.email);
+      logger.info(`logging in ${member.email}`);
       response.redirect("/dashboard");
-    } else if(trainer && trainer.password === password) {
+    } 
+     else if(trainer && trainer.password === password) {
       const trainerId = request.params.id;
       response.cookie("trainer", trainer.email);
       logger.info(`logging in ${trainer.email}`);
@@ -83,10 +99,15 @@ const accounts = {
       response.redirect("/login");
     }
   },
-
+  
   getCurrentUser(request) {
     const userEmail = request.cookies.member;
-    return userstore.getUserByEmail(userEmail);
+    return memberStore.getUserByEmail(userEmail);
+  },
+  
+  getCurrentTrainer(request) {
+    const trainerEmail = request.cookies.trainer;
+    return trainerStore.getTrainerByEmail(trainerEmail);
   }
 };
 

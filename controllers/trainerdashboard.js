@@ -2,50 +2,68 @@
 
 const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
+const assessmentStore = require("../models/assessment-store.js");
+const trainerStore = require("../models/trainer-store.js");
 const memberStore = require("../models/member-store.js");
-const trainerStore = require("../models/trainer.js");
-//const userStore = require("../models/user-store.js");
 const uuid = require("uuid");
 
 const trainerdashboard = {
   index(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
+    const loggedInTrainer = accounts.getCurrentTrainer(request);
     logger.info("Trainer dashboard rendering");
     const viewData = {
-      id: uuid.v1(),
       title: "Trainer Dashboard",
-      //users: userStore.getAllUsers()
-      members: memberStore.getUserDetails(loggedInUser.id)
+      trainer: trainerStore.getTrainerById(loggedInTrainer.id),
+      members: memberStore.getAllMembers(),
     };
     logger.info("about to render", memberStore.getAllMembers());
     response.render("trainerdashboard", viewData);
   },
+  
+   trainerAssessments(request, response){
+    const userId = request.params.id;
+    const viewMemeberData = {
+      title: "Trainer View | Member",
+      member: memberStore.getMemberById(userId),
+      assessments: assessmentStore.getUserAssessments(userId).reverse(),
+    };
+    response.render("trainerassessments", viewMemeberData);
+  },
 
   deleteMember(request, response) {
-    const memberId = request.params.id;
-    logger.debug(`Deleting Member ${memberId}`);
-    memberStore.removeMember(memberId);
+    const userId = request.params.id;
+    logger.debug(`Deleting Member ${userId}`);
+    memberStore.removeMember(userId);
+    assessmentStore.removeAllMemberAssessments(userId);
     response.redirect("/trainerdashboard");
   },
 
   deleteAssessment(request, response) {
-    const memberId = request.params.id;
+    const userId = request.params.id;
     //const loggedInUser = accounts.getCurrentUser(request);
     const assessmentId = request.params.assessmentid;
     logger.debug(
-      "Deleting Assessment ${assessmentId} from Member Profile ${memberId}"
+      "Deleting Assessment ${assessmentId} from Member Profile ${userId}"
     );
-    memberStore.removeAssessment(memberId, assessmentId);
-    response.redirect("/dashboard/" + memberId);
-  }
+    assessmentStore.removeAssessment(userId, assessmentId);
+    response.redirect("/dashboard/" + userId);
+  },
 
-  /*deleteAssessment(request, response) {
-    const memberId = request.params.id;
-    const assessmentId = request.params.assessmentid;
-    logger.debug(`Deleting assessment ${assessmentId} from Member ${memberId}`);
-    memberStore.removeAssessment(memberId, assessmentId);
-    response.redirect("/dashboard/" + memberId);
-  }*/
+  trainerComment(request, response) {
+    const assessmentId = request.params.id;
+    const userId = request.params.userid;
+    const member = memberStore.getMemberById(userId);
+    const newComment = {
+      id: assessmentId,
+      //assessments: assessmentStore.getAssessment(userId),
+      member: memberStore.getMemberAssessmentById(assessmentId),
+      comment: request.body.comment
+    };
+    logger.debug ("Trainer comment added to ${assessmentId}", newComment);
+    logger.info(`New assessment created ${newComment.id} against ${userId}`);
+    trainerStore.trainerComment(assessmentId, newComment.comment);
+    response.redirect("/trainerassessments/" + userId);
+  },  
 };
 
 module.exports = trainerdashboard;

@@ -1,0 +1,16 @@
+<table class="ui celled table">
+  <thead>
+      {{>assessment-header}}
+  </thead>
+  <tbody>
+  
+      {{> assessment-row-comment}}
+  </tbody>
+  </table>
+  <form class="ui secondary inverted charcoal segment form" action="/trainerdashboard/{{userid}}/trainercomment/{{id}}" method="POST">
+      <div class="field">
+        <label>Comment</label>
+          <input placeholder="Insert Comment Here" type="text" name="comment"> </input>
+      </div>
+      <button class="ui blue submit button">Update</button>
+  </form>

@@ -1,12 +1,14 @@
 {{#each members}}
   <section class="ui stacked segment">
     <h2 class="ui header">
-      
-      {{title}}
-      
+      {{fullname}} 
     </h2>
-    <p> Number of Assessments: assessments.length() </p>
-    <a href="/member/{{id}}" class="ui icon button">
+    <p>
+      <span class="ui medium red text">{{email}}</span>
+    </p>
+    
+    <p> Number of Assessments: {{assessments.length}} </p>
+    <a href="/trainerdashboard/trainerAssessments/{{id}}" class="ui icon button">
       <i class="icon folder open"></i>
     </a>
     <a href="/trainerdashboard/deletemember/{{id}}" class="ui icon button">

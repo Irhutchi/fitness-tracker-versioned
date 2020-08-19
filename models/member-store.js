@@ -1,26 +1,41 @@
-"use strict";
-const _ = require("lodash");
-const JsonStore = require("./json-store");
-//const accounts = require("./accounts.js");
+'use strict';
+
+const _ = require('lodash');
+const JsonStore = require('./json-store');
 
 const memberStore = {
-  store: new JsonStore("./models/member-assessment-list-store.json", {
-    memberCollection: []
-  }),
-  collection: "memberCollection",
+
+  store: new JsonStore('./models/member-store.json', { members: [] }),
+  collection: 'members',
 
   getAllMembers() {
     return this.store.findAll(this.collection);
   },
-
-  getMember(id) {
+  
+  getMemberById(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },
   
-  getUserDetails(userid) {
-    return this.store.findBy(this.collection, { userid: userid });
+   getMemberAssessments(memberid) {
+    return this.store.findBy(this.collection, { memberid: memberid });
   },
 
+  addMember(member) {
+    this.store.add(this.collection, member);
+    this.store.save();
+  },
+
+  getUserByEmail(email) {
+    return this.store.findOneBy(this.collection, { email: email });
+  },
+  getMemberByName(name) {
+    return this.store.FindOneBy(this.collection, { name: name });
+  },
+  
+  getMemberAssessmentById(id){
+    return this.store.findOneBy(this.collection, {id: id});
+  },
+  
   removeAssessment(id, assessmentId) {
     const member = this.getMember(id);
     const assessments = member.assessments;
@@ -32,17 +47,24 @@ const memberStore = {
     this.store.add(this.collection, assessment);
     this.store.save();
   },
-
+  
   removeMember(id) {
-    const member = this.getMember(id);
-    this.store.remove(this.collection, { id: id });
+    const member = this.getMemberById(id);
+    this.store.remove(this.collection, member);
+    this.store.save();
+  },
+  
+
+  updateMember(member, updatedMember) {
+    member.fullname = updatedMember.fullname;
+    member.gender = updatedMember.gender;
+    member.email = updatedMember.email;
+    member.email = updatedMember.email;
+    member.password = updatedMember.passowrd;
+    member.address = updatedMember.address;
     this.store.save();
   }
-
-  /*memberAssessmentSize(id, assessmentId) {
-    const member = this.getMember(id);
-    _.size(assessments, { id: assessmentId });
-  },*/
+  
 };
 
 module.exports = memberStore;

@@ -1,4 +1,4 @@
-/*"use strict";
+"use strict";
 
 const logger = require("../utils/logger");
 const memberStore = require("../models/member-store.js");
@@ -18,6 +18,8 @@ const analytics = {
     }
   },
 };
+
+
 
 module.exports = analytics;
   

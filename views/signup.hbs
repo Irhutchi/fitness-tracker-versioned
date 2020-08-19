@@ -1,13 +1,19 @@
 {{> welcomemenu id="signup"}}
 
-<div class="ui two column grid basic middle aligned segment">
+<segment class="ui aligned middle aligned two column grid segment">
   <div class="column">
-    <form class="ui stacked segment form" action="/register" method="POST">
+    <div class="ui attached message">
+      <div class="header">
+        Welcome to our site!
+      </div>
+      <p>Fill out the form below to sign-up for a new account</p>
+    </div>
+    <form class="ui form" action="/register" method="POST">
       <h1 class="ui orange header">Register</h1>
       <div class="two fields">
         <div class="field">
-          <label>Name</label>
-          <input placeholder="Name" type="text"  name="name">
+          <label>Fullname</label>
+          <input placeholder="fullname" type="text"  name="name">
         </div>
         <div class="field">
           <label>Gender</label>
@@ -16,9 +22,9 @@
             <i class="dropdown icon"></i>
             <div class="default text">Gender</div>
             <div class="menu">
-              <div class="item" data-value="2">Unspecified</div>
-              <div class="item" data-value="1">Male</div>
-              <div class="item" data-value="0">Female</div>
+              <div class="item" data-value="Unspecified">Unspecified</div>
+              <div class="item" data-value="Male">Male</div>
+              <div class="item" data-value="Female">Female</div>
             </div>
           </div>
         </div>
@@ -54,14 +60,25 @@
           <input type="number" placeholder="weight (kg)" step="0.1"  min="0" max="250"name="startingweight">
         </div>
       </div>
+      <div class="inline field">
+      <div class="ui checkbox">
+        <input type="checkbox" id="terms">
+        <label for="terms">I agree to the terms and conditions</label>
+      </div>
+    </div>
       <div class="ui success message">
         <div class="header">Form Completed</div>
         <p>You're account has been setup.</p>
       </div>
       <button class="ui blue submit button">Submit</button>
     </form>
+    <br>
+    <div class="ui bottom attached warning message">
+      <i class="icon help"></i>
+      Already signed up? <a href="https://my-fitness-tracker-1.glitch.me/login">Login here</a> instead.
+    </div>
   </div>
   <div class="column">
     <img class="ui image" src="https://cdn.glitch.com/8fe88056-95cf-41a7-b264-3253cbb98167%2Fabout.jpg?v=1595066738947">
   </div>
-</div>
+</segment>
