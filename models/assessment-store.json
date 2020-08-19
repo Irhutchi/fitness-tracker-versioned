@@ -1,0 +1,103 @@
+{
+  "assessmentCollection": [
+    {
+      "id": "1b5f06a0-d8c9-11ea-9ab9-65318b5353d3",
+      "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "entry": "7-8-2020 16:14:44",
+      "weight": "62",
+      "chest": "38",
+      "thigh": "21",
+      "upperArm": "18",
+      "waist": "30",
+      "hips": "34"
+    },
+    {
+      "id": "8c5bbd30-d8c9-11ea-b2ee-11750f89f5b8",
+      "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "entry": "7-8-2020 17:17:54",
+      "weight": "82",
+      "chest": "38",
+      "thigh": "20",
+      "upperArm": "29.0",
+      "waist": "28",
+      "hips": "25"
+    },
+    {
+      "id": "b02dd040-d8c9-11ea-b2ee-11750f89f5b8",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "entry": "7-8-2020 17:18:54",
+      "weight": "72.00",
+      "chest": "43.1",
+      "thigh": "25",
+      "upperArm": "29.0",
+      "waist": "35.9",
+      "hips": "40"
+    },
+    {
+      "id": "2b1372b0-dbe5-11ea-9b66-bdf62593c786",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "date": "11-8-2020 16:13:10",
+      "weight": "62.8",
+      "chest": "30.7",
+      "thigh": "19.7",
+      "upperArm": "29.0",
+      "waist": "28",
+      "hips": "32"
+    },
+    {
+      "id": "4dc82580-dbfe-11ea-a007-8761883bd014",
+      "userid": "64552710-d57a-11ea-aa84-aba2c4c44126",
+      "date": "11-8-2020 19:13:6",
+      "weight": "57.6",
+      "chest": "29",
+      "thigh": "15.5",
+      "upperArm": "11",
+      "waist": "28",
+      "hips": "28"
+    },
+    {
+      "id": "f43fd540-dc06-11ea-b819-0baa6d2deb64",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "date": "11-8-2020 20:15:1",
+      "weight": "82",
+      "chest": "36",
+      "thigh": "24.1",
+      "upperArm": "22",
+      "waist": "28",
+      "hips": "25"
+    },
+    {
+      "id": "8b102f10-ded7-11ea-9620-096c6c2a271c",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "15-8-2020 10:13:12",
+      "weight": "72.00",
+      "chest": "36",
+      "thigh": "27",
+      "upperArm": "29.0",
+      "waist": "38",
+      "hips": "32"
+    },
+    {
+      "id": "a5f46160-ded8-11ea-863c-a3a50a12aa33",
+      "userid": "add265d0-d8a2-11ea-a13d-dd547582ad10",
+      "date": "15-8-2020 10:21:6",
+      "weight": "88",
+      "chest": "44",
+      "thigh": "22",
+      "upperArm": "10",
+      "waist": "33",
+      "hips": "36"
+    },
+    {
+      "id": "de81f0c0-deeb-11ea-84cc-1bc69e0786bb",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "15-8-2020 12:38:41",
+      "weight": "95",
+      "chest": "44",
+      "thigh": "27",
+      "upperArm": "20",
+      "waist": "44",
+      "hips": "46"
+    }
+  ]
+}

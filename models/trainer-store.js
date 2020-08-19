@@ -2,6 +2,7 @@
 
 const _ = require('lodash');
 const JsonStore = require('./json-store');
+const assessmentStore = require("../models/assessment-store.js");
 
 const trainerStore = {
 
@@ -28,6 +29,13 @@ const trainerStore = {
   getTrainerByName(name) {
     return this.store.FindOneBy(this.collection, { name: name });
   },
+  
+  trainerComment(id, comment) {
+    const assessment = assessmentStore.getAssessment(id);
+    assessment.comment = comment;
+    this.store.update(assessment.collection, id, assessment);
+  },
+
 };
 
 module.exports = trainerStore;
