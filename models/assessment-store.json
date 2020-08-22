@@ -42,7 +42,8 @@
       "thigh": "19.7",
       "upperArm": "29.0",
       "waist": "28",
-      "hips": "32"
+      "hips": "32",
+      "comment": "good 1st session"
     },
     {
       "id": "4dc82580-dbfe-11ea-a007-8761883bd014",
@@ -75,7 +76,8 @@
       "thigh": "27",
       "upperArm": "29.0",
       "waist": "38",
-      "hips": "32"
+      "hips": "32",
+      "comment": "good 1st week"
     },
     {
       "id": "a5f46160-ded8-11ea-863c-a3a50a12aa33",
@@ -86,7 +88,8 @@
       "thigh": "22",
       "upperArm": "10",
       "waist": "33",
-      "hips": "36"
+      "hips": "36",
+      "comment": "Please exercise more"
     },
     {
       "id": "de81f0c0-deeb-11ea-84cc-1bc69e0786bb",
@@ -97,7 +100,42 @@
       "thigh": "27",
       "upperArm": "20",
       "waist": "44",
-      "hips": "46"
+      "hips": "46",
+      "comment": "well done"
+    },
+    {
+      "id": "5f8057c0-e202-11ea-9e14-e72627bea0df",
+      "userid": "a2de8fa0-dfb9-11ea-9e95-076be6571000",
+      "date": "19-8-2020",
+      "weight": "82",
+      "chest": "36",
+      "thigh": "21",
+      "upperArm": "22",
+      "waist": "29",
+      "hips": "26.1",
+      "comment": "Please exercise more"
+    },
+    {
+      "id": "b29b35f0-e20d-11ea-ad8c-6385a5cc604c",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "date": "Wed Aug 19 2020 11:18:24 GMT+0000 (Coordinated Universal Time) - 8 -2020",
+      "weight": "72.00",
+      "chest": "38",
+      "thigh": "21",
+      "upperArm": "22",
+      "waist": "28",
+      "hips": "25"
+    },
+    {
+      "id": "71812fa0-e20f-11ea-ad8c-6385a5cc604c",
+      "userid": "60ae8ba0-e20f-11ea-ad8c-6385a5cc604c",
+      "date": "Wed Aug 19 2020 11:30:54 GMT+0000 (Coordinated Universal Time) - 8 -2020",
+      "weight": "69",
+      "chest": "40.00",
+      "thigh": "24.1",
+      "upperArm": "29.0",
+      "waist": "30",
+      "hips": "25"
     }
   ]
 }

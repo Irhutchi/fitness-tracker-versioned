@@ -5,12 +5,12 @@
     <img class="ui image" src="https://cdn.glitch.com/8fe88056-95cf-41a7-b264-3253cbb98167%2Fabout.jpg?v=1595066738947">
   </div>
   <div class="column">
-    <form class="ui stacked segment form" action="/accounts/updatesettings/{{user.id}}" method="POST">
-      <h1 class="ui orange header">Edit Profile</h1>
+    <form class="ui stacked segment form" action="/accounts/{{userid}}/updatesettings/" method="POST">
+      <h1 class="ui orange header">Profile: {{member.fullname}} </h1>
       <div class="two fields">
         <div class="field">
           <label>Fullame</label>
-          <input placeholder="{{member.fullname}}" type="text"  name="name" value = {{member.fullname}}>
+          <input placeholder="{{member.fullname}}" type="text"  name="name">
         </div>
         <div class="field">
           <label>Gender</label>
@@ -30,28 +30,28 @@
          <label>Email</label>
           <div class="ui left icon input">
               <i class="mail icon"></i>
-              <input placeholder="{{member.email}}" name="email" value ={{member.email}}>
+              <input placeholder="{{member.email}}" name="email">
           </div>
       </div>
       <div class="field required">
         <label>Password</label>
           <div class="ui left icon input">
               <i class="lock icon"></i>
-              <input type="password"  name="password" value ={{password}}>
+              <input placeholder ="{{member.password}}"  name="password">
           </div>
       </div>
       <div class="field">
         <label>Address</label>
         <div class="ui left icon input">
           <i class="address card icon"></i>
-          <input placeholder="{{member.address}}" name="address" value ={{member.address}}>
+          <input placeholder="{{member.address}}" name="address">
         </div>
       </div>
       <div class="ui success message">
         <div class="header">Form Completed</div>
         <p>You're account has been setup.</p>
       </div>
-      <button class="ui blue submit button">update</button>
+      <button class="ui blue submit button">update/edit profile</button>
     </form>
   </div>
 </segment>

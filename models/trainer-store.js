@@ -30,12 +30,7 @@ const trainerStore = {
     return this.store.FindOneBy(this.collection, { name: name });
   },
   
-  trainerComment(id, comment) {
-    const assessment = assessmentStore.getAssessment(id);
-    assessment.comment = comment;
-    this.store.update(assessment.collection, id, assessment);
-  },
-
+  
 };
 
 module.exports = trainerStore;

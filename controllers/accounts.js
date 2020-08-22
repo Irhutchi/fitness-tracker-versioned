@@ -21,33 +21,19 @@ const accounts = {
   },
   
   settings(request, response) {
+    const loggedInMember = accounts.getCurrentUser(request); 
     const viewData = {
-      title: "Settings"
+      title: "Settings",
+      member: memberStore.getMemberById(loggedInMember.id)
     };
     response.render("settings", viewData);
   },
-  
-  /*updateSettings (request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    const editProfile = {
-      //id: uuid.v1(),
-      userid: loggedInUser.id, 
-      name: request.body.name,
-      gender: request.body.gender,
-      email: request.body.email,
-      password: request.body.password,
-      height: request.body.height,
-      startingweight: request.body.startingweight,
-    };
-    //logger.debug("Creating a new assessment = ", newAssessment);
-    //memberStore.addAssessment(editProfile);
-    response.redirect("/settings", editProfile);
-  },*/
 
    updateSettings(request, response) {
     const userId = request.params.id;
-    const loggedInMember = memberStore.getMemberById(userId);
-    const editProfile = {
+    const loggedInMember = memberStore.getMemberById(loggedInMember.id);
+    
+     const updatedProfile = {
       fullname: request.body.fullname,
       gender:  request.body.gender,
       email: request.body.email,
@@ -55,9 +41,10 @@ const accounts = {
       address: request.body.address,
     };
     logger.debug(`Updating User Details ${userId}`);
-    memberStore.updateMember(userId);
-    response.redirect("/settings/" + userId);
+    memberStore.updateMember(userId, updatedProfile);
+    response.redirect("/settings/");
   },
+
 
   logout(request, response) {
     response.cookie("member", "");
