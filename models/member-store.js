@@ -19,6 +19,7 @@ const memberStore = {
    getMemberAssessments(memberid) {
     return this.store.findBy(this.collection, { memberid: memberid });
   },
+  
 
   addMember(member) {
     this.store.add(this.collection, member);
@@ -54,17 +55,34 @@ const memberStore = {
     this.store.save();
   },
   
+  newComment(id, assessmentId, updatedAssessment){
+    const assessments = this.getAssessment(id, assessmentId);
+    assessments.comment = updatedAssessment.comment;
+    this.store.save();  
+  }, 
+  
+  updateComment(id, assessmentId, updatedComment){
+    const assessment = this.getAssessment(id, assessmentId);
+    assessment.comment = updatedComment.comment;
+    this.store.save();  
+  },
 
-  updateMember(member, updatedMember) {
-    member.fullname = updatedMember.fullname;
+  updateMember(id, updatedMember) {
+    const member = this.getMemberById(id, updatedMember);
+    member.name = updatedMember.name;
     member.gender = updatedMember.gender;
     member.email = updatedMember.email;
     member.email = updatedMember.email;
     member.password = updatedMember.passowrd;
     member.address = updatedMember.address;
     this.store.save();
-  }
+  },
   
+  updateMember(id){
+    const member = this.getMember(id);
+    this.store.update(this.collection, id, member);
+    this.store.save();
+  },
 };
 
 module.exports = memberStore;

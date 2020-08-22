@@ -5,6 +5,7 @@
       "email": "homer@simpson.com",
       "gender": "Male",
       "password": "secret",
+      "height": "1.7",
       "address": "Springfield",
       "startingweight": "109",
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
@@ -15,6 +16,7 @@
       "email": "marge@simpson.com",
       "password": "secret",
       "address": "Springfield",
+      "height": "1.4",
       "startingweight": "58",
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
     },
@@ -24,17 +26,17 @@
       "email": "member@123.com",
       "password": "secret",
       "address": "Fox Rock",
-      "height": "174",
+      "height": "1.74",
       "startingweight": "67",
       "id": "add265d0-d8a2-11ea-a13d-dd547582ad10"
     },
     {
-      "name": "user123",
+      "fullname": "user123",
       "gender": "Female",
       "email": "user@123.com",
       "password": "secret",
       "address": "State Street",
-      "height": "165",
+      "height": "1.65",
       "startingweight": "59",
       "id": "a2de8fa0-dfb9-11ea-9e95-076be6571000"
     }

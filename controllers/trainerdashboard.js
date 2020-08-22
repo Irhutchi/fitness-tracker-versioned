@@ -5,6 +5,8 @@ const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store.js");
 const trainerStore = require("../models/trainer-store.js");
 const memberStore = require("../models/member-store.js");
+const bmiCategory = require("../utils/bmi-category.js");
+const BMI = require("../utils/currentbmi.js");
 const uuid = require("uuid");
 
 const trainerdashboard = {
@@ -15,6 +17,7 @@ const trainerdashboard = {
       title: "Trainer Dashboard",
       trainer: trainerStore.getTrainerById(loggedInTrainer.id),
       members: memberStore.getAllMembers(),
+      
     };
     logger.info("about to render", memberStore.getAllMembers());
     response.render("trainerdashboard", viewData);
@@ -23,9 +26,11 @@ const trainerdashboard = {
    trainerAssessments(request, response){
     const userId = request.params.id;
     const viewMemeberData = {
-      title: "Trainer View | Member",
+      title: "Trainer View | Member:",
       member: memberStore.getMemberById(userId),
       assessments: assessmentStore.getUserAssessments(userId).reverse(),
+      BMI: BMI.BMICalc(userId),
+      bmiCategory: bmiCategory.bmiCategory(userId),
     };
     response.render("trainerassessments", viewMemeberData);
   },
@@ -37,33 +42,23 @@ const trainerdashboard = {
     assessmentStore.removeAllMemberAssessments(userId);
     response.redirect("/trainerdashboard");
   },
-
-  deleteAssessment(request, response) {
+  
+  updateComment(request, response) {
     const userId = request.params.id;
-    //const loggedInUser = accounts.getCurrentUser(request);
-    const assessmentId = request.params.assessmentid;
-    logger.debug(
-      "Deleting Assessment ${assessmentId} from Member Profile ${userId}"
-    );
-    assessmentStore.removeAssessment(userId, assessmentId);
-    response.redirect("/dashboard/" + userId);
-  },
-
-  trainerComment(request, response) {
-    const assessmentId = request.params.id;
-    const userId = request.params.userid;
     const member = memberStore.getMemberById(userId);
-    const newComment = {
-      id: assessmentId,
-      //assessments: assessmentStore.getAssessment(userId),
-      member: memberStore.getMemberAssessmentById(assessmentId),
-      comment: request.body.comment
+    const assessmentId = request.params.assessmentid;
+    logger.info(`Testing params ${request.params.assessmentid}`);
+  
+    const updatedComment = {
+      comment: request.body.comment,
     };
-    logger.debug ("Trainer comment added to ${assessmentId}", newComment);
-    logger.info(`New assessment created ${newComment.id} against ${userId}`);
-    trainerStore.trainerComment(assessmentId, newComment.comment);
-    response.redirect("/trainerassessments/" + userId);
-  },  
+    logger.debug ("Trainer comment added to ${assessmentId}", updatedComment);
+    logger.info(`Updating Assessment with a Commentfor ${assessmentId} Member ${userId}`);
+    assessmentStore.updateComment(userId, assessmentId, updatedComment);
+    //response.redirect("/trainerassessments/" + userId);
+    response.redirect("/trainerassessments");
+  }
+  
 };
 
 module.exports = trainerdashboard;

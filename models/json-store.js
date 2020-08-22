@@ -43,10 +43,7 @@ class JsonStore {
     return this.db.get(collection).filter(filter).value();
   }
   
-  update(collection, filter, obj) {
-    const update = this.db.get(collection).filter(filter).value();
-    update = obj;
-  }
+  
 }
 
 module.exports = JsonStore;

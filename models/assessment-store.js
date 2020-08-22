@@ -20,6 +20,10 @@ const assessmentStore = {
   getUserAssessments(userid) {
     return this.store.findBy(this.collection, { userid: userid });
   },
+  
+  getMemberAssessments(memberid) {
+    return this.store.findBy(this.collection, { memberid: memberid });
+  },
 
   removeAssessment(id, assessmentId) {
     const member = this.getMember(id);
@@ -44,6 +48,19 @@ const assessmentStore = {
     this.store.add(this.collection, assessment);
     this.store.save();
   },
+  
+  getAssessment(id, assessmentId) {
+    const assessment = this.store.findOneBy(this.collection, { id: id });
+    //const assessment = member.assessments.find(assessment => assessment.assessmentId === assessmentId);
+    return assessment;
+  },
+  
+   updateComment(id, assessmentId, updatedComment){
+    const assessment = this.getAssessment(id, assessmentId);
+    assessment.comment = updatedComment.comment;
+    this.store.save();  
+  },
+  
 
   removeMember(id) {
     const member = this.getMember(id);
@@ -53,7 +70,7 @@ const assessmentStore = {
 
   memberAssessmentSize(id, assessmentId) {
     const member = this.getMember(id);
-    const assessments = member.assessments;
+    const assessments = member.assessments.size();
     _.size(assessments, { id: assessmentId });
   },
 };

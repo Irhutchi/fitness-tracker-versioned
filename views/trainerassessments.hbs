@@ -2,7 +2,13 @@
 
 <section class="ui center aligned middle aligned segment">
   <h2 class="ui header">
-    {{member.name}}
+     <div class="ui olive statistic">
+      <div class="value">
+        <i class="user icon"></i>
+      </div>
+      <div class="label">
+        {{title}} {{member.fullname}}
+      </div>
   </h2>
   {{> analytics}}
   {{#each assessments}}
