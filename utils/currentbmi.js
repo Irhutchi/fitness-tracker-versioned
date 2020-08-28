@@ -7,10 +7,10 @@ const accounts = require("../controllers/accounts.js");
 const currentBMI= {
   BMICalc(id) {
     const member = memberStore.getMemberById(id);
-    const assessments = assessmentStore.getMemberAssessments(id);
+    const assessments = assessmentStore.getUserAssessments(id);
     if(assessments.length===0) {
       //Convert a number into a string, rounding the number to keep only two decimals
-      let bmiNum = member.startingweight / Math.pow(member.height, 2);
+      let bmiNum = member.weight / Math.pow(member.height, 2);
       return bmiNum.toFixed(2);
     }
     else{

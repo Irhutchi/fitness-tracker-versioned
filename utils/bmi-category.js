@@ -10,7 +10,9 @@ const bmiCategory = {
     const member = memberStore.getMemberById(id);
     const assessments = assessmentStore.getUserAssessments(id);
     const bmi = currentBMI.BMICalc(id);
+    
     let result = "";
+    
     if(bmi <= 15.0){ result = 'Very severely underweight'; }
     else if(bmi > 15.0 && bmi <= 16.0){ result =  'Severely underweight';}
     else if(bmi > 16.0 && bmi <= 18.50 ){ result =  'Underweight';}   

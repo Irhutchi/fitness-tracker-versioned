@@ -17,8 +17,8 @@ router.post('/register', accounts.register);
 router.post('/authenticate', accounts.authenticate);
 router.get("/settings/:id", accounts.settings);
 router.post('/settings', accounts.updateSettings);
-router.post("/accounts/:userid/updatesettings", accounts.updateSettings);
-router.get("/about", about.index);
+router.post("/accounts/updatesettings/:id", accounts.updateSettings);
+
 
 router.get("/", dashboard.index);
 router.get("/dashboard", dashboard.index);

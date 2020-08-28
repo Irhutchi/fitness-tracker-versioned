@@ -7,6 +7,7 @@ const accounts = require("./accounts.js");
 const uuid = require("uuid");
 const bmiCategory = require("../utils/bmi-category.js");
 const BMI = require("../utils/currentbmi.js");
+const idealBodyWeight = require("../utils/ideal-body-weight.js");
 
 const dashboard = {
   index(request, response) {
@@ -18,6 +19,7 @@ const dashboard = {
       member: memberStore.getMemberById(loggedInUser.id),
       BMI: BMI.BMICalc(loggedInUser.id),
       bmiCategory: bmiCategory.bmiCategory(loggedInUser.id),
+      idealBodyWeight: idealBodyWeight.isIdealBodyWeight(loggedInUser.id),
     };
     logger.info("about to render", assessmentStore.getAllAssessments());
     response.render("dashboard", viewData);
@@ -27,31 +29,17 @@ const dashboard = {
       1 to February, and so on.*/
   addAssessment(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
-    let current_datetime = new Date() // Set variable to current date and time
-    let dd = current_datetime.getDate();
-    let current_month = current_datetime.getMonth()+1;
-    let mmm = current_datetime.getMonth()+1;
-    const yyyy = current_datetime.getFullYear();
-    if(dd<10) 
-      {
-          dd='0'+dd;
-      } 
-    if(mmm<10) 
-      {
-          mmm='0'+mmm;
-      } 
-    //let formatted_date = dd + '-' +mmm+'-'+yyyy;
-    let formatted_date = `${current_datetime} - ${current_month} -${yyyy}`;
+   
     const newAssessment = {
       id: uuid.v1(),
       userid: loggedInUser.id, // find out who the logged in user is and then make sure that users ID is stored with the assessment
-      date: formatted_date,  
-      weight: request.body.weight,
-      chest: request.body.chest,
-      thigh: request.body.thigh,
-      upperArm: request.body.upperArm,
-      waist: request.body.waist,
-      hips: request.body.hips,
+      datetime: new Date().toUTCString(),
+      weight: Number(request.body.weight),
+      chest: Number(request.body.chest),
+      thigh: Number(request.body.thigh),
+      upperArm: Number(request.body.upperArm),
+      waist: Number(request.body.waist),
+      hips: Number(request.body.hips),
       comment: undefined,
     };
     logger.debug("Creating a new assessment ", newAssessment);

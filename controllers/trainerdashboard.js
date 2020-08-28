@@ -5,6 +5,8 @@ const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store.js");
 const trainerStore = require("../models/trainer-store.js");
 const memberStore = require("../models/member-store.js");
+//const idealBodyWeight = require("../utils/ideal-body-weight");
+const idealBodyWeight = require("../utils/ideal-body-weight.js");
 const bmiCategory = require("../utils/bmi-category.js");
 const BMI = require("../utils/currentbmi.js");
 const uuid = require("uuid");
@@ -31,6 +33,7 @@ const trainerdashboard = {
       assessments: assessmentStore.getUserAssessments(userId).reverse(),
       BMI: BMI.BMICalc(userId),
       bmiCategory: bmiCategory.bmiCategory(userId),
+      idealBodyWeight: idealBodyWeight.isIdealBodyWeight(userId),
     };
     response.render("trainerassessments", viewMemeberData);
   },

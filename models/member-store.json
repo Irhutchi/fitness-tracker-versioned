@@ -22,23 +22,13 @@
     },
     {
       "fullname": "member123",
-      "gender": "2",
+      "gender": "Male",
       "email": "member@123.com",
       "password": "secret",
       "address": "Fox Rock",
       "height": "1.74",
       "startingweight": "67",
       "id": "add265d0-d8a2-11ea-a13d-dd547582ad10"
-    },
-    {
-      "fullname": "user123",
-      "gender": "Female",
-      "email": "user@123.com",
-      "password": "secret",
-      "address": "State Street",
-      "height": "1.65",
-      "startingweight": "59",
-      "id": "a2de8fa0-dfb9-11ea-9e95-076be6571000"
     }
   ]
 }

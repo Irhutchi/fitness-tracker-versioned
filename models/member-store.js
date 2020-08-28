@@ -55,11 +55,11 @@ const memberStore = {
     this.store.save();
   },
   
-  newComment(id, assessmentId, updatedAssessment){
+  /*newComment(id, assessmentId, updatedAssessment){
     const assessments = this.getAssessment(id, assessmentId);
     assessments.comment = updatedAssessment.comment;
     this.store.save();  
-  }, 
+  },*/ 
   
   updateComment(id, assessmentId, updatedComment){
     const assessment = this.getAssessment(id, assessmentId);
@@ -67,11 +67,12 @@ const memberStore = {
     this.store.save();  
   },
 
-  updateMember(id, updatedMember) {
-    const member = this.getMemberById(id, updatedMember);
-    member.name = updatedMember.name;
+  updateMember(memberId, updatedMember) {
+    //updateMember(id) {
+    //const member = this.getMemberById(memberId, updatedMember);
+    const member = this.getMemberById(memberId);
+    member.fullname = updatedMember.fullname;
     member.gender = updatedMember.gender;
-    member.email = updatedMember.email;
     member.email = updatedMember.email;
     member.password = updatedMember.passowrd;
     member.address = updatedMember.address;
