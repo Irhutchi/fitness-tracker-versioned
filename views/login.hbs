@@ -1,24 +1,63 @@
 {{> welcomemenu id='login' }}
 
-<form class="ui stacked segment form" action="/authenticate" method="POST">
-   <h1 class="ui orange header">
-      Welcome back !
+
+<segment class="ui aligned middle aligned two column grid segment">
+  <div class="column">
+    <form class="ui form" action="/authenticate" method="POST">
+     <h1 class="ui orange header">
+        Welcome back !
       <div class="sub header">Lets get into it....</div>
-  </h1>
+    </h1>
+     <div class="field required">
+       <label>Email</label> 
+        <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input placeholder="email" name="email">
+        </div>
+    </div>
+    <div class="field required">
+      <label>Password</label>
+        <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password"  name="password">
+        </div>
+    </div>
+    <button class="ui blue submit button">Login</button>
+  </form>  
   </div>
-   <div class="field required">
-     <label>Email</label> 
-      <div class="ui left icon input">
-          <i class="mail icon"></i>
-          <input placeholder="Email" name="email">
-      </div>
+  <div class="column">
+    <img class="ui image" src="https://cdn.glitch.com/4d764618-36ee-4372-84ad-e72b20213749%2Fpexels-breakingpic-3301.jpg?v=1598375782714"/>
   </div>
-  <div class="field required">
-    <label>Password</label>
-      <div class="ui left icon input">
-          <i class="lock icon"></i>
-          <input type="password"  name="password">
-      </div>
+</segment>
+
+<!--<segment class="ui two column middle aligned grid basic segment">
+  <section class="column">
+    <form class="ui stacked segment form" action="/authenticate" method="POST">
+     <h1 class="ui orange header">
+        Welcome back !
+      <div class="sub header">Lets get into it....</div>
+    </h1>
+    </div>
+     <div class="field required">
+       <label>Email</label> 
+        <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input placeholder="Email" name="email">
+        </div>
+    </div>
+    <div class="field required">
+      <label>Password</label>
+        <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password"  name="password">
+        </div>
+    </div>
+    <button class="ui blue submit button">Login</button>
+  </form>  
+  <div class="column">
+    <img class="ui image" src="https://cdn.glitch.com/4d764618-36ee-4372-84ad-e72b20213749%2Fpexels-breakingpic-3301.jpg?v=1598375782714"/>
   </div>
-  <button class="ui blue submit button">Login</button>
-</form>
+</segment>-->
+
+
+

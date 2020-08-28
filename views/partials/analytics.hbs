@@ -2,7 +2,11 @@
   <div class="ui three small statistics">
     <div class="ui statistic">
       <div class="value">
-        
+         {{#if idealBodyWeight}}
+            <i class="green dashboard icon"></i>
+        {{else}}
+          <i class="red dashboard icon"></i>
+        {{/if}}
       </div>
       <div class="label">
         Ideal Weight Indicator
