@@ -116,17 +116,6 @@
       "comment": "Please exercise more"
     },
     {
-      "id": "b29b35f0-e20d-11ea-ad8c-6385a5cc604c",
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "datetime": "Wed Aug 19 2020 11:18:24 GMT+0000 (Coordinated Universal Time) - 8 -2020",
-      "weight": 72,
-      "chest": 38,
-      "thigh": 21,
-      "upperArm": 22,
-      "waist": 28,
-      "hips": 25
-    },
-    {
       "id": "71812fa0-e20f-11ea-ad8c-6385a5cc604c",
       "userid": "60ae8ba0-e20f-11ea-ad8c-6385a5cc604c",
       "datetime": "Wed Aug 19 2020 11:30:54 GMT+0000 (Coordinated Universal Time) - 8 -2020",
@@ -147,6 +136,29 @@
       "upperArm": 18,
       "waist": 27.5,
       "hips": 31.5
+    },
+    {
+      "id": "2e4be1b0-e928-11ea-8670-259f97243607",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "datetime": "Fri, 28 Aug 2020 12:15:37 GMT",
+      "weight": 69,
+      "chest": 33,
+      "thigh": 18,
+      "upperArm": 16,
+      "waist": 26.5,
+      "hips": 28,
+      "comment": "Could do better"
+    },
+    {
+      "id": "3de46a20-ebbc-11ea-bc85-8be0d760e1ce",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "datetime": "Mon, 31 Aug 2020 19:00:31 GMT",
+      "weight": 69,
+      "chest": 38,
+      "thigh": 20,
+      "upperArm": 22,
+      "waist": 30,
+      "hips": 25
     }
   ]
 }

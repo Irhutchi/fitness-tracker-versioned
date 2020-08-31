@@ -25,14 +25,14 @@ const idealBodyWeight = {
     let isIdealBodyWeight;
     if (inches <= fiveFeet) {
       if (member.gender === "Male") {
-        idealBodyWeight = 50;
-      } else {
-        idealBodyWeight = 45.5;
+        idealBodyWeight === 50;
+      } else if (member.gender === "Female" || member.gender === "Unspecified"){
+        idealBodyWeight === 45.5;
       }
     } else {  
       if (member.gender === "Male") {
         idealBodyWeight === 50 + ((inches - fiveFeet) * 2.3);
-      } else {
+      } else if (member.gender === "Female" || member.gender === "Unspecified") {
         idealBodyWeight === 45.5 + ((inches - fiveFeet) * 2.3);
       }
     }

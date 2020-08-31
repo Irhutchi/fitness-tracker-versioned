@@ -33,7 +33,7 @@ const dashboard = {
     const newAssessment = {
       id: uuid.v1(),
       userid: loggedInUser.id, // find out who the logged in user is and then make sure that users ID is stored with the assessment
-      datetime: new Date().toUTCString(),
+      datetime: new Date().toUTCString(), // [2] refer to rubric notes attached.
       weight: Number(request.body.weight),
       chest: Number(request.body.chest),
       thigh: Number(request.body.thigh),
