@@ -11,11 +11,11 @@ const currentBMI= {
     if(assessments.length===0) {
       //Convert a number into a string, rounding the number to keep only two decimals
       let bmiNum = member.weight / Math.pow(member.height, 2);
-      return bmiNum.toFixed(2);
+      return bmiNum.toFixed(2); // [1] refer to rubric notes attached.
     }
     else{
       let bmiNum = assessments[assessments.length-1].weight / Math.pow(member.height, 2);
-      return bmiNum.toFixed(2);
+      return bmiNum.toFixed(2);  //[1] refer to rubric notes attached.
     }
   }
 }

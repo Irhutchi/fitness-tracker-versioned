@@ -5,12 +5,12 @@
     <img class="ui image" src="https://cdn.glitch.com/8fe88056-95cf-41a7-b264-3253cbb98167%2Fabout.jpg?v=1595066738947">
   </div>
   <div class="column">
-    <form class="ui stacked segment form" action="/accounts/updatesettings/{{userid}}" method="POST">
-      <h1 class="ui orange header">Account: {{member.fullname}} </h1>
+    <form class="ui stacked segment form" action="/accounts/updatesettings/{{member.id}}" method="POST">
+      <h1 class="ui blue header">Account: {{member.fullname}} </h1>
       <div class="two fields">
         <div class="field">
           <label>Fullame</label>
-          <input placeholder="{{member.fullname}}" type="text"  name="name">
+          <input placeholder="{{member.fullname}}" type="text"  name="fullname">
         </div>
         <div class="field">
           <label>Gender</label>

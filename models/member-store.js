@@ -67,23 +67,15 @@ const memberStore = {
     this.store.save();  
   },
 
-  updateMember(memberId, updatedMember) {
-    //updateMember(id) {
-    //const member = this.getMemberById(memberId, updatedMember);
-    const member = this.getMemberById(memberId);
-    member.fullname = updatedMember.fullname;
-    member.gender = updatedMember.gender;
-    member.email = updatedMember.email;
-    member.password = updatedMember.passowrd;
-    member.address = updatedMember.address;
+  updateMember(user, updatedMember) {
+    user.fullname = updatedMember.fullname;
+    user.gender = updatedMember.gender;
+    user.email = updatedMember.email;
+    user.password = updatedMember.passowrd;
+    user.address = updatedMember.address;
     this.store.save();
   },
   
-  updateMember(id){
-    const member = this.getMember(id);
-    this.store.update(this.collection, id, member);
-    this.store.save();
-  },
 };
 
 module.exports = memberStore;

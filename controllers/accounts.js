@@ -22,6 +22,7 @@ const accounts = {
 
   settings(request, response) {
     const loggedInMember = accounts.getCurrentUser(request);
+    const userId = request.params.id;
     const viewData = {
       title: "Member | Settings",
       member: memberStore.getMemberById(loggedInMember.id)
@@ -30,10 +31,11 @@ const accounts = {
   },
 
   updateSettings(request, response) {
-    const userId = request.params.id;
+    const userId = request.params.userid;
     const loggedInMember = memberStore.getMemberById(userId);
     //const member = memberStore.getMember(userId);
     const updatedProfile = {
+      
       fullname: request.body.fullname,
       gender: request.body.gender,
       email: request.body.email,
@@ -41,8 +43,8 @@ const accounts = {
       address: request.body.address
     };
     logger.debug("Updating User Details", loggedInMember);
-    memberStore.updateMember(userId); //(userId, updatedProfile)
-      response.redirect("/settings/" + userId);
+    memberStore.updateMember(loggedInMember, updatedProfile); //(userId, updatedProfile)
+      response.redirect("/dashboard/");
     //response.render("settings", updatedProfile);
   },
 
