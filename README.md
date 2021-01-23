@@ -22,9 +22,9 @@ _**Back-end**_ - All written in Javascript + JSON.
 * **Model** - Javascript classes represent the information system <br/>
 * **Config** - .gitignore, .jscsrc, env, package.json, readme.md <br/>
 
-_**Front-end**_ - All written in HTML + handlebars. <br/>
- 
- _consists of:_  <br> 
+_**Front-end**_ - All written in HTML + handlebars. 
+
+ _consists of:_  <br> 
 * **Layouts** - main entry point <br/>
    * Includes Fomantic-UI CSS library
    * All views are based on the structure laid down in layout/main.hbs
@@ -35,13 +35,5 @@ _**Front-end**_ - All written in HTML + handlebars. <br/>
 ## Project-Setup 
 -  git clone using the following link. <br/>
 link: https://github.com/Irhutchi/fitness-tracker-versioned <br/>
-
-
-## Sample Screenshot of a part of the Web App
-
-![]() <br/>
-![]() <br/>
-![]() <br/>
-![]()
 
 
